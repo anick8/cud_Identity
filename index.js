@@ -10,7 +10,7 @@ app.use((req, res, next) => {
     next();
 }); 
 
-require('./app/createUserroutes')(app,console);
+require('./app/Identityroutes')(app,console);
 //require('./app')(app,console);
 
 app.listen(appconfig.apiport, () => {

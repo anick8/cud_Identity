@@ -1,21 +1,21 @@
 var pgsql = require('../lib/pgsql')
 var utils = require('../common/utils')
-var createuser = require('./createuser')
+var Identity = require('./Identity');
 module.exports = (app, console) => {
 //    var utils = require('../common/utils');
 
-    app.post('/createuser',async (req, res) => {
-         result  = await createuser.createuser(req);
+    app.post('/createIdentity',async (req, res) => {
+         result  = await Identity.createIdentity(req);
          utils.handleresult(res,result)
         }
     )
-    app.post('/updateuser',async (req, res) => {
-        result  = await createuser.updateuser(req);
+    app.post('/updateIdentity',async (req, res) => {
+        result  = await Identity.updateIdentity(req);
         utils.handleresult(res,result)
        }
     )
-    app.post('/deleteuser',async (req, res) => {
-        result  = await createuser.deleteuser(req);
+    app.post('/deleteIdentity',async (req, res) => {
+        result  = await Identity.deleteIdentity(req);
         utils.handleresult(res,result)
         }
     )
